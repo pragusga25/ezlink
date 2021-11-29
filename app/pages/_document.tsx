@@ -38,7 +38,7 @@ class MyDocument extends Document {
           <meta name="twitter:creator" content="@pragusga" />
           <meta name="twitter:title" content="GWJ.PW | URL Shortener" />
           <meta name="twitter:description" content="A simple and free url shortener" />
-
+          <link rel="canonical" href="https://pragusga.com" />
           <link href="https://fonts.googleapis.com/css2?family=Inter" rel="stylesheet" />
           <title>GWJ.PW | URL Shortener</title>
         </DocumentHead>
