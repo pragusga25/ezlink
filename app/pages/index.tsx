@@ -12,12 +12,20 @@ import { FormElement } from "@nextui-org/react/esm/input/input-props"
 const Home: BlitzPage = () => {
   const [createUrlMutation, { isLoading, isSuccess }] = useMutation(createShortUrl)
   const [shortUrl, setShortUrl] = useState("")
-  const { register, getValues, trigger, setValue } = useForm<z.infer<typeof CreateShortUrl>>({
+  const {
+    register,
+    getValues,
+    trigger,
+    setValue,
+    formState: { errors },
+  } = useForm<z.infer<typeof CreateShortUrl>>({
     resolver: zodResolver(CreateShortUrl),
   })
 
   const shorten = async () => {
-    if (!(await trigger())) return toast.error("Please fill all fields")
+    const errKeys = Object.keys(errors)[0]
+
+    if (!(await trigger())) return toast.error(errors[errKeys as string]?.message)
 
     toast
       .promise(createUrlMutation(getValues()), {
