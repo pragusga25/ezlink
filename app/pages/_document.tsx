@@ -21,7 +21,11 @@ class MyDocument extends Document {
       <Html lang="en">
         <DocumentHead>
           <meta name="description" content="A simple and free url shortener" />
-          <meta name="keywords" content="shortener, short, url, short url" />
+          <meta
+            name="keywords"
+            content="shortener, short, url, short url, free url shortener, simple url shortener, url shortener"
+          />
+          <meta name="robots" content="url, gwj, shortener, short url, url shortener" />
           <meta name="author" content="Pragusga" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -37,6 +41,7 @@ class MyDocument extends Document {
           <meta name="twitter:description" content="A simple and free url shortener" />
 
           <link href="https://fonts.googleapis.com/css2?family=Inter" rel="stylesheet" />
+          <title>GWJ.PW | URL Shortener</title>
         </DocumentHead>
         <body>
           <Main />
