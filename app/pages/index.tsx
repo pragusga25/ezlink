@@ -3,17 +3,22 @@ import { Button, Container, Input, Spacer, Text } from "@nextui-org/react"
 import createShortUrl from "app/url/mutations/createShortUrl"
 import { useForm } from "react-hook-form"
 import toast from "react-hot-toast"
-import { useState } from "react"
+import { ChangeEvent, useState } from "react"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { z } from "zod"
+import { CreateShortUrl } from "app/url/validations"
+import { FormElement } from "@nextui-org/react/esm/input/input-props"
 
 const Home: BlitzPage = () => {
   const [createUrlMutation, { isLoading, isSuccess }] = useMutation(createShortUrl)
   const [shortUrl, setShortUrl] = useState("")
-  const { register, getValues } = useForm<{
-    url: string
-    code: string
-  }>()
+  const { register, getValues, trigger, setValue } = useForm<z.infer<typeof CreateShortUrl>>({
+    resolver: zodResolver(CreateShortUrl),
+  })
 
   const shorten = async () => {
+    if (!(await trigger())) return toast.error("Please fill all fields")
+
     toast
       .promise(createUrlMutation(getValues()), {
         loading: "Creating short url...",
@@ -70,7 +75,12 @@ const Home: BlitzPage = () => {
         labelLeft="gwj.pw/"
         placeholder="Enter Your Short Code"
         required
-        {...register("code")}
+        {...register("code", {
+          onChange: (e: ChangeEvent<FormElement>) => {
+            const noSpaces = e.target.value.replace(/\s/g, "-")
+            setValue("code", noSpaces)
+          },
+        })}
       />
       <Spacer y={1} />
       <Container
@@ -81,6 +91,7 @@ const Home: BlitzPage = () => {
         }}
       >
         <Button
+          bordered
           color="warning"
           loaderType="points"
           auto
