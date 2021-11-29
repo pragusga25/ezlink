@@ -33,6 +33,8 @@ class MyDocument extends Document {
           <meta property="og:url" content="https://www.gwj.pw" />
           <meta property="og:site_name" content="GWJ.PW" />
           <meta property="og:image" content="https://www.gwj.pw/gwj.jpg" />
+          <meta property="og:image:alt" content="GWJ LOGO" />
+          <meta property="og:type" content="website" />
 
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="https://www.gwj.pw" />
