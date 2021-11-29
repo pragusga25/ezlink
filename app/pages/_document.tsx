@@ -28,15 +28,11 @@ class MyDocument extends Document {
           <meta name="author" content="Pragusga" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-          <meta name="og:title" property="og:title" content="GWJ.PW | URL Shortener" />
-          <meta
-            name="og:description"
-            property="og:description"
-            content="A simple and free url shortener"
-          />
-          <meta name="og:url" property="og:url" content="https://www.gwj.pw" />
-          <meta name="og:site_name" property="og:site_name" content="GWJ.PW" />
-          <meta name="og:image" property="og:image" content="https://www.gwj.pw/gwj.jpg" />
+          <meta property="og:title" content="GWJ.PW | URL Shortener" />
+          <meta property="og:description" content="A simple and free url shortener" />
+          <meta property="og:url" content="https://www.gwj.pw" />
+          <meta property="og:site_name" content="GWJ.PW" />
+          <meta property="og:image" content="https://www.gwj.pw/gwj.jpg" />
 
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="https://www.gwj.pw" />
