@@ -25,7 +25,6 @@ class MyDocument extends Document {
             name="keywords"
             content="shortener, short, url, short url, free url shortener, simple url shortener, url shortener"
           />
-          <meta name="robots" content="url, gwj, shortener, short url, url shortener" />
           <meta name="author" content="Pragusga" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
