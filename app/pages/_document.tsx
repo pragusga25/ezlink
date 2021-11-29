@@ -32,14 +32,14 @@ class MyDocument extends Document {
           <meta property="og:description" content="A simple and free url shortener" />
           <meta property="og:url" content="https://www.gwj.pw" />
           <meta property="og:site_name" content="GWJ.PW" />
-          <meta property="og:image" content="https://www.gwj.pw/gwj.jpg" />
+          <meta property="og:image:src" content="https://www.gwj.pw/gwj.jpg" />
 
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="https://www.gwj.pw" />
           <meta name="twitter:creator" content="@pragusga" />
           <meta name="twitter:title" content="GWJ.PW | URL Shortener" />
           <meta name="twitter:description" content="A simple and free url shortener" />
-          <meta name="twitter:image" content="https://www.gwj.pw/gwj.jpg" />
+          <meta name="twitter:image:src" content="https://www.gwj.pw/gwj.jpg" />
 
           <link rel="shortlink" href="gwj.pw" />
           <link rel="canonical" href="https://www.gwj.pw" />
