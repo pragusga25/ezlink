@@ -33,7 +33,7 @@ class MyDocument extends Document {
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="https://www.gwj.pw" />
           <meta name="twitter:creator" content="@pragusga" />
-          <meta name="twitter:title" content="GWJ.PW" />
+          <meta name="twitter:title" content="GWJ.PW | URL Shortener" />
           <meta name="twitter:description" content="A simple and free url shortener" />
 
           <link href="https://fonts.googleapis.com/css2?family=Inter" rel="stylesheet" />
