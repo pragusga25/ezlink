@@ -25,7 +25,7 @@ const Home: BlitzPage = () => {
         success: "Short url created!",
         error: (err) => {
           let textMsg = ""
-          if (err.message != "Short URL already exists") {
+          if (err.message != "Short code already exists") {
             const errs = JSON.parse(err.message)
             textMsg = Array.isArray(errs) ? errs[0].message : errs
           } else {
