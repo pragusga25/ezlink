@@ -1,5 +1,5 @@
 import { BlitzPage, useMutation } from "blitz"
-import { Button, Container, Input, Spacer, Text } from "@nextui-org/react"
+import { Button, Container, Input, Spacer, Text, Tooltip } from "@nextui-org/react"
 import createShortUrl from "app/url/mutations/createShortUrl"
 import { useForm } from "react-hook-form"
 import toast from "react-hot-toast"
@@ -17,9 +17,10 @@ const Home: BlitzPage = () => {
     getValues,
     trigger,
     setValue,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<z.infer<typeof CreateShortUrl>>({
     resolver: zodResolver(CreateShortUrl),
+    mode: "onChange",
   })
 
   const shorten = async () => {
@@ -72,7 +73,6 @@ const Home: BlitzPage = () => {
         labelPlaceholder="Enter Your Long URL"
         type="url"
         color="warning"
-        required
         {...register("url")}
       />
       <Spacer y={1} />
@@ -82,7 +82,6 @@ const Home: BlitzPage = () => {
         color="warning"
         labelLeft="gwj.pw/"
         placeholder="Enter Your Short Code"
-        required
         {...register("code", {
           onChange: (e: ChangeEvent<FormElement>) => {
             const noSpaces = e.target.value.replace(/\s/g, "-")
@@ -90,6 +89,12 @@ const Home: BlitzPage = () => {
           },
         })}
       />
+      {!isValid && (
+        <>
+          <Spacer y={0.5} />
+          <Text color="warning">{errors?.url?.message ?? errors?.code?.message}</Text>
+        </>
+      )}
       <Spacer y={1} />
       <Container
         style={{
@@ -106,6 +111,7 @@ const Home: BlitzPage = () => {
           ghost
           loading={isLoading}
           onClick={shorten}
+          disabled={!isValid}
         >
           Shorten
         </Button>
