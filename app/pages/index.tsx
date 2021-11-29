@@ -29,7 +29,7 @@ const Home: BlitzPage = () => {
             const errs = JSON.parse(err.message)
             textMsg = Array.isArray(errs) ? errs[0].message : errs
           } else {
-            textMsg = "Short URL already exists"
+            textMsg = "Short code already exists"
           }
           return textMsg
         },
