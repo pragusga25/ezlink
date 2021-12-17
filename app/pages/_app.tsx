@@ -1,4 +1,4 @@
-import { AppProps } from "blitz"
+import { AppProps, Script } from "blitz"
 import { CssBaseline, Container, ThemeProvider } from "@nextui-org/react"
 import { Toaster } from "react-hot-toast"
 
@@ -15,6 +15,15 @@ export default function App({ Component, pageProps }: AppProps) {
         <CssBaseline />
         <Toaster position="top-center" reverseOrder={true} />
         {getLayout(<Component {...pageProps} />)}
+        <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
+        <noscript>
+          {/* eslint-disable @next/next/no-img-element */}
+          <img
+            src="https://queue.simpleanalyticscdn.com/noscript.gif"
+            alt=""
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </noscript>
       </Container>
     </ThemeProvider>
   )
